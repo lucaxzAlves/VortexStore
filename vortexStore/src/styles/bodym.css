@@ -1,0 +1,21 @@
+* {
+margin: 0;
+padding: 0;
+font-family: 'Open Sans';
+scroll-behavior: smooth;
+}
+
+:root{
+    --white: #ccd0cf;
+    --semi-white: #9ba8ab;
+    --grey: #4a5c6a;
+    --grey-dark: #253745;
+    --semi-black: #11212d;
+    --black: #06141b;
+    --red: #090003;
+   }
+
+body {
+background: linear-gradient(45deg, rgb(28, 28, 39), #090003);
+animation: header 0.8s;
+}

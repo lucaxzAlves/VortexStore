@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@font-face {
+    font-family: doddger;
+    src: url(assets/dodger3_1.otf); 
+}
+
+
+
+@keyframes header {
+0% {
+opacity: 0;
+margin-right: 300px;
+}
+100% {
+opacity: 1;
+}
+}
+
+.logo{
+font-family: doddger;
+font-size: 30px;
+margin: auto -160px;
+color: #980000;
+}
+
+header {
+height: 70px;
+width: 100%;
+display: flex;
+margin: auto;
+justify-content: space-around;
+font-size: 20px;
+background-color: rgb(28, 28, 39);
+position: fixed;
+border-bottom: #70012b solid;
+z-index: 4;
+}
+
+.links {
+font-size: 20px;
+display: flex;
+margin: auto 8px auto 0px;
+}
+
+.links li {
+margin: auto;
+list-style: none;
+}
+
+.links li a {
+margin: auto 20px;
+text-decoration: none;
+color: #ffffff;
+transition: 0.8s;
+}
+
+.links li a:hover {
+border-bottom: crimson 2px solid;
+color: #b62626;
+}
+
+.loginButton {
+height: 40px;
+width: 140px;
+background-color: #980000;
+margin: auto 0px auto -150px;
+text-align: center;
+font-size: 25px;
+color: #ffffff;
+border-radius: 10px;
+border: none;
+}
+
+.loginButton:hover {
+transition: 0.8s;
+transform: scale(1.1);
+cursor: pointer;
+background-color: transparent;
+color: white;
+border: solid 2px white;
+}

@@ -1,0 +1,103 @@
+.contato {
+height: 80vh;
+color: white;
+}
+
+.contato-text {
+font-size: 30px;
+margin-left: 130px;
+}
+
+.contato-text p {
+font-size: 20px;
+width: 700px;
+color: rgb(198, 198, 198);
+}
+
+.cnt-princ {
+width: 1500px;
+display: flex;
+margin: 30px auto;
+}
+
+.cnt-princ img {
+margin-left: 40px;
+width: 200px;
+}
+
+.cnt-princ div {
+margin:30px ;
+width: 700px;
+height: 400px;
+display: flex;
+border-radius: 20px;
+}
+
+.cnt-text {
+width: 10px;
+flex-direction: column;
+}
+
+.perguntas {
+box-shadow: rgba(0, 0, 0, 0.443) 5px 5px 5px 5px;
+background-color: #980000;
+}
+
+.perguntas h1 {
+text-align: center;
+font-size: 30px;
+margin-right: 149px;
+margin-bottom: 30px;
+margin-top: 50px;
+color: #000000;
+}
+
+.perguntas input {
+margin-top: 40px;
+height: 40px;
+width: 250px;
+border-radius: 10px;
+border: none;
+background-color: #000000;
+color: white;
+font-size: 25px;
+}
+
+.perguntas input:hover  {
+transform: scale(1.1);
+transition: 0.8s;
+cursor: pointer;
+background-color: #4a5c6a;
+border: solid 2px white;
+}
+
+.especialista {
+box-shadow: black 5px 5px 5px 5px;
+}
+
+.especialista h1 {
+text-align: center;
+font-size: 30px;
+margin-right: 149px;
+margin-bottom: 30px;
+margin-top: 50px;
+color: #ffffff;
+}
+
+.especialista input {
+margin-top: 40px;
+height: 40px;
+width: 250px;
+border-radius: 10px;
+border: none;
+background-color: #ff0000;
+color: white;
+font-size: 25px;
+}
+.especialista input:hover {
+transform: scale(1.1);
+transition: 0.8s;
+cursor: pointer;
+background-color: transparent;
+border: solid 2px white;
+}

@@ -1,0 +1,64 @@
+.sobre {
+height: 120vh;
+width: 100%;
+}
+
+.sobre h3 {
+text-align: center;
+margin: 250px auto 0px auto ;
+color: white;
+font-size: 40px;
+}
+
+.text-sobre {
+width: 1400px;
+height: 600px;
+background-color: #11212d00;
+display: flex;
+margin: 40px auto;
+}
+
+.text-sobre div {
+width: 350px;
+height: 600px;
+color: white;
+background-color: rgb(28, 28, 39);;
+align-items: center;
+justify-content: center;
+margin: auto;
+border-radius: 40PX;
+text-align: center;
+}
+
+.text-sobre img {
+width: 300px;
+}
+
+
+.text-sobre h1 {
+margin: 20px;
+font-size: 30px;
+}
+
+.text-sobre p {
+font-size: 16px;
+}
+
+.text-sobre input {
+margin-top: 20px;
+height: 60px;
+width: 277px;
+background-color: #b62626;
+border: none;
+color: white;
+font-size: 20px;
+box-shadow: rgba(0, 0, 0, 0.655) 5px 5px 5px;
+}
+
+.text-sobre input:hover {
+transform: scale(1.1);
+transition: 0.8s;
+cursor: pointer;background-color: transparent;
+color: white;
+border: solid 2px white;
+}
