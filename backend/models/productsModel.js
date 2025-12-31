@@ -5,9 +5,9 @@ const ProductsSchema = new mongoose.Schema({
       name: String,
       desc: String,
       imgURL: String,
-      stars: Number,
+      stars: { type: Number, default: 0 },
       stock: Number,
-      available: Boolean
+      available: {type: Boolean, default: false} 
 
 })
 
