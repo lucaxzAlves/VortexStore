@@ -59,7 +59,7 @@ app.post('/login', async (req, res) => {
     const secret = process.env.SECRET
     
     const token = jwt.sign({
-      userID: user.__id
+      userID: user._id
     }, secret
   )
    console.log('token criado')
@@ -110,7 +110,65 @@ app.post('/products/register', async (req, res) => {
 
 })
 
+app.post('/products/edit', async (req, res) => {
+  console.log(req.body)
+ const { price, name, desc, stock, available, _id } = req.body
 
+ 
+
+ const updatedProduct = await productsModel.findOneAndUpdate( { _id },
+ { $set: { price, name, desc, stock, available }},
+ { new: true }
+)
+
+ await updatedProduct.save() 
+
+ res.status(200).send("produto atualizado com sucesso")
+ console.log(updatedProduct)
+
+})
+
+app.post('/products/delete/:id', async (req, res) => {
+  const id = req.params.id
+
+  const deletedProduct = await productsModel.findOneAndDelete({ _id: id })
+
+  if(!deletedProduct) {
+   return res.status(401).send("produto não encontrado")
+  }
+   
+  res.status(200).send("produto deletado com sucesso")
+
+})
+
+app.post('/products/:id/review', async (req, res) => {
+  const productId = req.params
+  const { comment, rating, userID } = req.body
+
+  const product = productsModel.findOneAndUpdate({ _id: productId }, {
+     $push: {
+      reviews: {
+        userID,
+        comment,
+        rating
+      }
+     }
+   })
+//implementar média
+
+})
+
+app.get('/api/products', async (req, res) => {
+ 
+  const products = await productsModel.find({})
+  
+  if(!products) {
+    res.status(401).send("produtos não encontrados")
+  }
+
+  res.json(products)
+
+})
 
 
 

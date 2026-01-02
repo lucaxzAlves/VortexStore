@@ -6,6 +6,15 @@ const ProductsSchema = new mongoose.Schema({
       desc: String,
       imgURL: String,
       stars: { type: Number, default: 0 },
+      reviews: [{
+      userId: String,
+      comment: String,
+      rating: Number,
+      createdAt: {
+        type: Date,
+        default: Date.now
+      }
+      }],
       stock: Number,
       available: {type: Boolean, default: false} 
 
