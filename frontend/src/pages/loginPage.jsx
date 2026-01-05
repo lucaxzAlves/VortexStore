@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import '../styles/login.css'
 
-export function LoginPage() {
+export function  LoginPage() {
 
           const[name, setName] = useState('')
           const[password, setPassword] = useState('')
           const [error, setError] = useState(false)
 
-          function handleSubmit(e) {
+          async function handleSubmit(e) {
            e.preventDefault()
            if(!name || !password) {
            setError(true)
            }
 
-           fetch('http://localhost:3000/register', {
+          const res = await fetch('http://localhost:3000/login', {
             method: 'POST',
              headers: {
     'Content-Type': 'application/json'
@@ -25,6 +25,10 @@ export function LoginPage() {
              password: password
             })
            })
+
+           const token = await res.text()
+
+           localStorage.setItem("token", token)
           }
 
     return(

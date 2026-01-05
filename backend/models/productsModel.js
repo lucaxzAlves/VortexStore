@@ -7,7 +7,7 @@ const ProductsSchema = new mongoose.Schema({
       imgURL: String,
       stars: { type: Number, default: 0 },
       reviews: [{
-      userId: String,
+      userId:  mongoose.Schema.Types.ObjectId,
       comment: String,
       rating: Number,
       createdAt: {

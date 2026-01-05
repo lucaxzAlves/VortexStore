@@ -63,7 +63,7 @@ app.post('/login', async (req, res) => {
     }, secret
   )
    console.log('token criado')
-   res.status(200).send('usuario logado', token)
+   res.status(200).send(token)
   }
   
   catch(error){
@@ -114,17 +114,13 @@ app.post('/products/edit', async (req, res) => {
   console.log(req.body)
  const { price, name, desc, stock, available, _id } = req.body
 
- 
-
- const updatedProduct = await productsModel.findOneAndUpdate( { _id },
+  await productsModel.findOneAndUpdate( { _id },
  { $set: { price, name, desc, stock, available }},
  { new: true }
 )
 
- await updatedProduct.save() 
 
  res.status(200).send("produto atualizado com sucesso")
- console.log(updatedProduct)
 
 })
 
@@ -170,7 +166,46 @@ app.get('/api/products', async (req, res) => {
 
 })
 
+//cart endpoints 
 
+const cartModel = require('./models/cartModel')
+
+app.post('/cart/add', async (req, res) => {
+
+  const { userId, productID, quantity } = req.body
+
+  await cartModel.findOneAndUpdate({ userId },
+     { $push: { items: {
+      productID,
+      quantity
+     }}
+   }, { upsert: true })
+
+   
+  
+  res.status(200).send("carrinho atualizado com sucesso")
+})
+
+app.post('/cart/delete', async (req, res) => {
+  const { userId, productID } = req.body
+  await cartModel.findOneAndUpdate({ userId }, { $pull: { items: { productID }} })
+
+  res.status(200).send("produto removido com sucesso")
+
+  //tem que testar
+})
+
+app.get('/api/cart', async (req, res) => {
+  const { userId } = req.body
+
+  const userCart = await cartModel.findOne({ userId })
+
+  if(!userCart) {
+  res.status(400).send("nenhum carrinho encontrado")
+  }
+
+  res.json(userCart)
+})
 
 
 app.listen(PORT, () => {

@@ -1,11 +1,12 @@
-const moongose = require('mongoose')
+const mongoose = require('mongoose')
 
-const CartSchema = new moongose.Schema({
-      userId: ObjectId,
-      items: {
-        productID,
+
+const CartSchema = new mongoose.Schema({
+      userId: mongoose.Schema.Types.ObjectId,
+      items: [{
+        productID: mongoose.Schema.Types.ObjectId,
         quantity: Number
-      }
+      }]
 
 
 })

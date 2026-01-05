@@ -9,7 +9,7 @@ color: #ffffff;
 }
 
 .more {
-margin-left: -20px;
+
 font-size: 70px;
 cursor: pointer;
 }
@@ -33,7 +33,7 @@ height: 150px;
 }
 
 .p {
-flex: 0 0 15%;
+flex: 0 0 5%;
 margin: 20px auto 0px auto;
 width: 250px;
 height: 430px;
